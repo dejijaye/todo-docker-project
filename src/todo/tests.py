@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-from todo.Models import TodoItem
+from todo.models import TodoItem
 
 def createItem(client):
   url = reverse('todoitem-list')
@@ -17,7 +17,7 @@ class TestCreateTodoItem(APITestCase):
     self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
 
   def test_received_location_header_hyperlink(self):
-    self.assertRegexMatches(self.response['Location'], '^http://.+/todo/[\d]+$')
+    self.assertRegexpMatches(self.response['Location'], '^http://.+/todos/[\d]+$')
     
   def test_item_was_created(self):
     self.assertEqual(TodoItem.objects.count(), 1)
