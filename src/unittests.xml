@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="12" errors="4" failures="0" skip="0"><testcase classname="todo.tests.TestCreateTodoItem" name="test_item_has_correct_title" time="0.045"></testcase><testcase classname="todo.tests.TestCreateTodoItem" name="test_item_was_created" time="0.007"></testcase><testcase classname="todo.tests.TestCreateTodoItem" name="test_receive_201_created_status_code" time="0.010"></testcase><testcase classname="todo.tests.TestCreateTodoItem" name="test_received_location_header_hyperlink" time="0.006"></testcase><testcase classname="todo.tests.TestDeleteAllTodoItem" name="test_all_the_item_was_deleted" time="0.071"><error type="exceptions.AttributeError" message="type object 'TodoItem' has no attribute 'object'"><![CDATA[Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py", line 322, in run
+    self.setUp()
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/tests.py", line 81, in setUp
+    self.response = self.client.delete(reverse('todoitem-list'))
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 194, in delete
+    path, data=data, format=format, content_type=content_type, **extra)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 104, in delete
+    return self.generic('DELETE', path, data, content_type, **extra)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/test/client.py", line 380, in generic
+    return self.request(**r)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 159, in request
+    return super(APIClient, self).request(**kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 111, in request
+    request = super(APIRequestFactory, self).request(**kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/test/client.py", line 467, in request
+    six.reraise(*exc_info)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/views.py", line 22, in delete
+    TodoItem.object.all().delete()
+AttributeError: type object 'TodoItem' has no attribute 'object'
+]]></error></testcase><testcase classname="todo.tests.TestDeleteAllTodoItem" name="test_recieve_204_no_content_status_code" time="0.040"><error type="exceptions.AttributeError" message="type object 'TodoItem' has no attribute 'object'"><![CDATA[Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py", line 322, in run
+    self.setUp()
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/tests.py", line 81, in setUp
+    self.response = self.client.delete(reverse('todoitem-list'))
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 194, in delete
+    path, data=data, format=format, content_type=content_type, **extra)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 104, in delete
+    return self.generic('DELETE', path, data, content_type, **extra)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/test/client.py", line 380, in generic
+    return self.request(**r)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 159, in request
+    return super(APIClient, self).request(**kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/test.py", line 111, in request
+    request = super(APIRequestFactory, self).request(**kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/test/client.py", line 467, in request
+    six.reraise(*exc_info)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/venv/lib/python2.7/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/views.py", line 22, in delete
+    TodoItem.object.all().delete()
+AttributeError: type object 'TodoItem' has no attribute 'object'
+]]></error></testcase><testcase classname="todo.tests.TestDeleteTodoItem" name="test_received_204_no_content_status_code" time="0.012"></testcase><testcase classname="todo.tests.TestDeleteTodoItem" name="test_the_item_was_deleted" time="0.016"></testcase><testcase classname="todo.tests.TestPatchTodoItem" name="test_item_was_updated" time="0.015"></testcase><testcase classname="todo.tests.TestPatchTodoItem" name="test_received_200_ok_status_code" time="0.015"><error type="exceptions.AttributeError" message="'TestPatchTodoItem' object has no attribute 'response'"><![CDATA[Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/tests.py", line 55, in test_received_200_ok_status_code
+    self.assertEqual(self.response.status_code, status.HTTP_200_OK)
+AttributeError: 'TestPatchTodoItem' object has no attribute 'response'
+]]></error></testcase><testcase classname="todo.tests.TestUpdateTodoItem" name="test_item_was_updated" time="0.019"></testcase><testcase classname="todo.tests.TestUpdateTodoItem" name="test_receive_200_created_status_code" time="0.013"><error type="exceptions.AttributeError" message="'TestUpdateTodoItem' object has no attribute 'response'"><![CDATA[Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/Users/dejijaye/workspace/docker-project/todobackend/src/todo/tests.py", line 39, in test_receive_200_created_status_code
+    self.assertEqual(self.response.status_code, status.HTTP_200_OK)
+AttributeError: 'TestUpdateTodoItem' object has no attribute 'response'
+]]></error></testcase></testsuite>

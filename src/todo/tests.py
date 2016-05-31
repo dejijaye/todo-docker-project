@@ -25,8 +25,8 @@ class TestCreateTodoItem(APITestCase):
   def test_item_has_correct_title(self):
     self.assertEqual(TodoItem.objects.get().title, 'Walk the dog')
 
-class TestUpdateTodoItem(object):
-  """ Ensure we cam update an existing todo item using PUT"""
+class TestUpdateTodoItem(APITestCase):
+  """ Ensure we can update an existing todo item using PUT"""
   def setUp(self):
     response = createItem(self.client)
     self.assertEqual(TodoItem.objects.get().completed, False)
@@ -41,8 +41,8 @@ class TestUpdateTodoItem(object):
   def test_item_was_updated(self):
     self.assertEqual(TodoItem.objects.get().completed, True)
 
-class TestPatchTodoItem(object):
-  """ Ensure we cam update an existing todo item using PUT"""
+class TestPatchTodoItem(APITestCase):
+  """ Ensure we can update an existing todo item using PATCH"""
   def setUp(self):
     response = createItem(self.client)
     self.assertEqual(TodoItem.objects.get().completed, False)
@@ -51,34 +51,33 @@ class TestPatchTodoItem(object):
     self.reponse = self.client.patch(url, data, format='json')
 
 
-  def test_receive_200_ok_status_code(self):
+  def test_received_200_ok_status_code(self):
     self.assertEqual(self.response.status_code, status.HTTP_200_OK)
 
   def test_item_was_updated(self):
     self.assertEqual(TodoItem.objects.get().completed, True)
 
-class TestDeleteTodoItem(object):
+class TestDeleteTodoItem(APITestCase):
   """ Ensure we can delete a todo item """
-  def setUp():
+  def setUp(self):
     response = createItem(self.client)
     self.assertEqual(TodoItem.objects.count(), 1)
     url = response['Location']
     self.response = self.client.delete(url)
 
-  def test_recieve_204_no_content_status_code(self):
+  def test_received_204_no_content_status_code(self):
     self.assertEqual(self.response.status_code, status.HTTP_204_NO_CONTENT)
 
   def test_the_item_was_deleted(self):
     self.assertEqual(TodoItem.objects.count(), 0)
 
 
-class TestDeleteAllTodoItem(object):
-  """ Ensure we can delete a todo item """
-  def setUp():
+class TestDeleteAllTodoItem(APITestCase):
+  """ Ensure we can delete all todo items """
+  def setUp(self):
     createItem(self.client)
     createItem(self.client)
     self.assertEqual(TodoItem.objects.count(), 2)
-    url = response['Location']
     self.response = self.client.delete(reverse('todoitem-list'))
 
   def test_recieve_204_no_content_status_code(self):
