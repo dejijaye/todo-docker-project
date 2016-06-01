@@ -1,1 +1,5 @@
-venv/
+venv
+src/.coverage
+src/coverage.xml
+src/unittests.xml
+src/nosetests.xml
