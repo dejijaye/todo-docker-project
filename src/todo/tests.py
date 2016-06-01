@@ -32,7 +32,7 @@ class TestUpdateTodoItem(APITestCase):
     self.assertEqual(TodoItem.objects.get().completed, False)
     url = response['Location']
     data = {'title': 'Walk the dog', 'completed': True}
-    self.reponse = self.client.put(url, data, format='json')
+    self.response = self.client.put(url, data, format='json')
 
 
   def test_receive_200_created_status_code(self):
@@ -48,7 +48,7 @@ class TestPatchTodoItem(APITestCase):
     self.assertEqual(TodoItem.objects.get().completed, False)
     url = response['Location']
     data = {'title': 'Walk the dog', 'completed': True}
-    self.reponse = self.client.patch(url, data, format='json')
+    self.response = self.client.patch(url, data, format='json')
 
 
   def test_received_200_ok_status_code(self):
